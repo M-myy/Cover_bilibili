@@ -21,9 +21,6 @@ class Window:
         qfile.open(QFile.ReadOnly)
         qfile.close()
 
-        # 从 ui 定义中动态创建一个相应的窗口对象
-        # 注意:里面的控件对象也成为窗口对象的属性了
-        # 比如self.ui.button,self.ui.text_edit
         self.ui = QUiLoader().load(qfile)  # 可理解为 self.ui = QMainWindow()
         self.ui.button.clicked.connect(self.button_handle)
 
